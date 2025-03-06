@@ -11,7 +11,7 @@ html {
 
 body {
   margin: 0;
-  background-color: #333;
+  background-color: #1F1F1F;
   color: white;
 }
 
@@ -126,6 +126,37 @@ nav ul li a {
 
 .column:nth-child(2) .image-placeholder {
   background: linear-gradient(45deg, #77aaff, #7788ff);
+}
+
+/**********************
+Services
+*************************/
+
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services h2 {
+  font-size: 12.5rem;
+  font-weight: 100;
+  color: #383838;
+}
+
+.services-content {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ff758c;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top: -85px;
+}
+
+.slide {
+  width: 400px;
+  height: 600px;
 }
 
 /* Scroll Animations (Looping Effect) */
