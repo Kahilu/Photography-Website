@@ -1,0 +1,148 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins';
+}
+
+body {
+  margin: 0;
+  background-color: #333;
+  color: white;
+}
+
+.side-padding {
+  padding-left: 5%;
+  padding-right:5%;
+}
+
+/*Nav Bar*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  margin: 4em; /*em units for scaling (4em = 40px)*/
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 5em; /*space between tabs*/
+  line-height: 100%;
+  margin: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 1.6rem; /*rem units for fonts (1.6rem = 16px)*/
+  font-weight: 300;
+  position: relative;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh; /* Full-screen height */
+  width: 100%;
+}
+
+.hero-content {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  border-radius: 8px;
+  border: 1px solid #db4454;
+  background: none;
+  color: #ffffff;
+  padding: 12px 24px;
+}
+
+.cta-btn:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+/* Carousel Container */
+.carousel {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Columns with duplicated placeholders */
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  
+  gap: 10px;
+  animation: scrollUp 10s linear infinite;
+}
+
+.column:nth-child(2) {
+  animation: scrollDown 10s linear infinite;
+}
+
+/* Duplicate placeholders to create seamless scrolling */
+.column .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 240px;
+  background: linear-gradient(45deg, #ff7eb3, #ff758c);
+  border-radius: 5px;
+}
+
+.column:nth-child(2) .image-placeholder {
+  background: linear-gradient(45deg, #77aaff, #7788ff);
+}
+
+/* Scroll Animations (Looping Effect) */
+@keyframes scrollUp {
+  from {
+      transform: translateY(0%);
+  }
+  to {
+      transform: translateY(-100%);
+  }
+}
+
+@keyframes scrollDown {
+  from {
+      transform: translateY(-100%);
+  }
+  to {
+      transform: translateY(0%);
+  }
+}
