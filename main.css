@@ -6,34 +6,35 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "poppins";
+  font-family: 'poppins';
 }
 
 body {
   margin: 0;
-  background-color: #1f1f1f;
+  background-color: #1F1F1F;
   color: white;
 }
 
 .side-padding {
   padding-left: 5%;
-  padding-right: 5%;
+  padding-right:5%;
 }
 
 /*Nav Bar*/
-.nav-header {
-  margin: auto;
-  max-width: 600px;
-  height: 100px;
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+nav {
+  margin: 4em; /*em units for scaling (4em = 40px)*/
+}
+
 nav ul {
   list-style-type: none;
   display: flex;
-  justify-content: space-between;
+  gap: 5em; /*space between tabs*/
   line-height: 100%;
   margin: 0;
 }
@@ -41,14 +42,9 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   color: rgb(255, 255, 255);
-  font-size: 2.6rem; /*rem units for fonts (1.6rem = 16px)*/
-  font-weight: 400;
+  font-size: 1.6rem; /*rem units for fonts (1.6rem = 16px)*/
+  font-weight: 300;
   position: relative;
-  color: #db4454;
-}
-
-nav ul li a:hover {
-  transform: translateY(-10px);
 }
 
 /* Hero Section */
@@ -61,60 +57,70 @@ nav ul li a:hover {
 }
 
 .hero-content {
-  height: 350px;
-  width: 750px;
+  width: 45%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
 }
 
 .hero-content h1 {
-  font-size: 60px;
-  line-height: 71px;
-  margin: 0;
-  color: #db4454;
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
 .hero-content p {
-  font-size: 23px;
-  font-weight: 300;
-  margin: 0;
-  line-height: 30px;
+  font-size: 1rem;
+  margin-bottom: 20px;
 }
 
-.cta-btn {
-  border-radius: 8px;
-  border: 1px solid #db4454;
-  background: none;
+/*button*/ 
+button {
+  padding: 8px 12px;
+  border: 2px solid #db4454;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  font-size: 16px;
+  transition: .3s;
+  z-index: 1;
+  font-family: inherit;
   color: #ffffff;
-  padding: 12px 24px;
-  font-size: 20px;
 }
 
-.cta-btn:hover {
-  background-color: #db4454;
-  color: #ffffff;
-  transition: ease-in-out 0.3s;
-  font-size: 20px;
+button::before {
+  content: '';
+  width: 0;
+  height: 350%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #db4454;
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+}
+
+button:hover::before {
+  width: 105%;
+}
+
+button:hover {
+  color: #111;
 }
 
 /* Carousel Container */
 .carousel {
-  /* display: flex;
-  width: 100%;
-  max-width: 600px;
-  height: 300px;
-  overflow: hidden;
-  position: relative; */
-  z-index: -1;
-  position: relative;
   display: flex;
-  flex-direction: row;
-  gap: 30px;
-  width: 837px;
-  height: 100%;
+  
+  max-width: 600px;
+  
   overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 /* Columns with duplicated placeholders */
@@ -122,7 +128,7 @@ nav ul li a:hover {
   flex: 1;
   display: flex;
   flex-direction: column;
-
+  
   gap: 10px;
   animation: scrollUp 10s linear infinite;
 }
@@ -139,10 +145,8 @@ nav ul li a:hover {
 }
 
 .image-placeholder {
-  /* width: 100%;
-  height: 240px; */
   width: 100%;
-  height: 650px;
+  height: 240px;
   background: linear-gradient(45deg, #ff7eb3, #ff758c);
   border-radius: 5px;
 }
@@ -155,19 +159,19 @@ nav ul li a:hover {
 Services
 *************************/
 
-.services {
+.services, .gallery {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.services h2 {
+.services h2, .gallery h2 {
   font-size: 12.5rem;
   font-weight: 100;
   color: #383838;
 }
 
-.services-content {
+.services-content, .gallery-content {
   display: flex;
   justify-content: space-between;
   background-color: #ff758c;
@@ -185,18 +189,73 @@ Services
 /* Scroll Animations (Looping Effect) */
 @keyframes scrollUp {
   from {
-    transform: translateY(0%);
+      transform: translateY(0%);
   }
   to {
-    transform: translateY(-100%);
+      transform: translateY(-100%);
   }
 }
 
 @keyframes scrollDown {
   from {
-    transform: translateY(-100%);
+      transform: translateY(-100%);
   }
   to {
-    transform: translateY(0%);
+      transform: translateY(0%);
+  }
+}
+
+/*********************
+Gallery
+**********************/
+.gallery-content {
+  display: grid;
+    gap: 10px;
+    max-width: 90vw;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+}
+
+/* Responsive Grid Placement */
+.gallery-item:nth-child(1) { grid-column: span 2; }
+.gallery-item:nth-child(2) { grid-column: span 2; }
+.gallery-item:nth-child(3) { grid-column: span 1; grid-row: span 2; }
+.gallery-item:nth-child(4) { grid-column: span 1; }
+.gallery-item:nth-child(5) { grid-column: span 2; grid-row: span 2; }
+.gallery-item:nth-child(6) { grid-column: span 1; }s
+.gallery-item:nth-child(7) { grid-column: span 1; }
+.gallery-item:nth-child(8) { grid-column: span 2; }
+
+/* Image Container */
+.gallery-item {
+    overflow: hidden; /* Prevents image overflow */
+    position: relative;
+}
+
+/* Image Styling */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Zoom Effect - Zoom Inside Container */
+.gallery-item:hover img {
+  transform: scale(1.2); /* Zoom in */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .gallery {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+      grid-template-columns: repeat(1, 1fr);
   }
 }
