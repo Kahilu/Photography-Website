@@ -6,35 +6,34 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'poppins';
+  font-family: "poppins";
 }
 
 body {
   margin: 0;
-  background-color: #1F1F1F;
+  background-color: #1f1f1f;
   color: white;
 }
 
 .side-padding {
   padding-left: 5%;
-  padding-right:5%;
+  padding-right: 5%;
 }
 
 /*Nav Bar*/
-nav {
+.nav-header {
+  margin: auto;
+  max-width: 600px;
+  height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-nav {
-  margin: 4em; /*em units for scaling (4em = 40px)*/
-}
-
 nav ul {
   list-style-type: none;
   display: flex;
-  gap: 5em; /*space between tabs*/
+  justify-content: space-between;
   line-height: 100%;
   margin: 0;
 }
@@ -42,9 +41,14 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   color: rgb(255, 255, 255);
-  font-size: 1.6rem; /*rem units for fonts (1.6rem = 16px)*/
-  font-weight: 300;
+  font-size: 2.6rem; /*rem units for fonts (1.6rem = 16px)*/
+  font-weight: 400;
   position: relative;
+  color: #db4454;
+}
+
+nav ul li a:hover {
+  transform: translateY(-10px);
 }
 
 /* Hero Section */
@@ -57,20 +61,26 @@ nav ul li a {
 }
 
 .hero-content {
-  width: 45%;
+  height: 350px;
+  width: 750px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-between;
 }
 
 .hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+  font-size: 60px;
+  line-height: 71px;
+  margin: 0;
+  color: #db4454;
 }
 
 .hero-content p {
-  font-size: 1rem;
-  margin-bottom: 20px;
+  font-size: 23px;
+  font-weight: 300;
+  margin: 0;
+  line-height: 30px;
 }
 
 .cta-btn {
@@ -79,21 +89,32 @@ nav ul li a {
   background: none;
   color: #ffffff;
   padding: 12px 24px;
+  font-size: 20px;
 }
 
 .cta-btn:hover {
-  background-color: rgb(255, 255, 255);
-  color: black;
+  background-color: #db4454;
+  color: #ffffff;
+  transition: ease-in-out 0.3s;
+  font-size: 20px;
 }
 
 /* Carousel Container */
 .carousel {
-  display: flex;
+  /* display: flex;
   width: 100%;
   max-width: 600px;
   height: 300px;
   overflow: hidden;
+  position: relative; */
+  z-index: -1;
   position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  width: 837px;
+  height: 100%;
+  overflow: hidden;
 }
 
 /* Columns with duplicated placeholders */
@@ -101,7 +122,7 @@ nav ul li a {
   flex: 1;
   display: flex;
   flex-direction: column;
-  
+
   gap: 10px;
   animation: scrollUp 10s linear infinite;
 }
@@ -118,8 +139,10 @@ nav ul li a {
 }
 
 .image-placeholder {
+  /* width: 100%;
+  height: 240px; */
   width: 100%;
-  height: 240px;
+  height: 650px;
   background: linear-gradient(45deg, #ff7eb3, #ff758c);
   border-radius: 5px;
 }
@@ -162,18 +185,18 @@ Services
 /* Scroll Animations (Looping Effect) */
 @keyframes scrollUp {
   from {
-      transform: translateY(0%);
+    transform: translateY(0%);
   }
   to {
-      transform: translateY(-100%);
+    transform: translateY(-100%);
   }
 }
 
 @keyframes scrollDown {
   from {
-      transform: translateY(-100%);
+    transform: translateY(-100%);
   }
   to {
-      transform: translateY(0%);
+    transform: translateY(0%);
   }
 }
