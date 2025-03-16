@@ -116,7 +116,7 @@ button:hover {
   display: flex;
   
   max-width: 600px;
-  
+
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -124,7 +124,7 @@ button:hover {
 }
 
 /* Columns with duplicated placeholders */
-.column {
+.hero-column {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -133,12 +133,12 @@ button:hover {
   animation: scrollUp 10s linear infinite;
 }
 
-.column:nth-child(2) {
+.hero-column:nth-child(2) {
   animation: scrollDown 10s linear infinite;
 }
 
 /* Duplicate placeholders to create seamless scrolling */
-.column .wrapper {
+.hero-column .wrapper {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -146,12 +146,12 @@ button:hover {
 
 .image-placeholder {
   width: 100%;
-  height: 240px;
+  height: 440px;
   background: linear-gradient(45deg, #ff7eb3, #ff758c);
   border-radius: 5px;
 }
 
-.column:nth-child(2) .image-placeholder {
+.hero-column:nth-child(2) .image-placeholder {
   background: linear-gradient(45deg, #77aaff, #7788ff);
 }
 
@@ -208,49 +208,42 @@ Services
 /*********************
 Gallery
 **********************/
-.gallery-content {
-  display: grid;
-    gap: 10px;
-    max-width: 90vw;
-    width: 100%;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
+.container {
+  margin-top: -85px;
+  max-width: 1224px;
+  width: 90%;
+  background-color: #1F1F1F;
 }
 
-/* Responsive Grid Placement */
-.gallery-item:nth-child(1) { grid-column: span 2; }
-.gallery-item:nth-child(2) { grid-column: span 2; }
-.gallery-item:nth-child(3) { grid-column: span 1; grid-row: span 2; }
-.gallery-item:nth-child(4) { grid-column: span 1; }
-.gallery-item:nth-child(5) { grid-column: span 2; grid-row: span 2; }
-.gallery-item:nth-child(6) { grid-column: span 1; }s
-.gallery-item:nth-child(7) { grid-column: span 1; }
-.gallery-item:nth-child(8) { grid-column: span 2; }
-
-/* Image Container */
-.gallery-item {
-    overflow: hidden; /* Prevents image overflow */
-    position: relative;
+.photo-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
 }
 
-/* Image Styling */
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease-in-out;
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.photo img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
 }
 
 /* Hover Zoom Effect - Zoom Inside Container */
-.gallery-item:hover img {
+.photo:hover img {
   transform: scale(1.2); /* Zoom in */
+  transition: transform 0.5s;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .gallery {
-      grid-template-columns: repeat(2, 1fr);
+  .photo-gallery {
+    flex-direction: column;
   }
 }
 
