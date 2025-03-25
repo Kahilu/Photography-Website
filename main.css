@@ -6,18 +6,22 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'poppins';
+  font-family: "poppins";
 }
 
 body {
   margin: 0;
-  background-color: #1F1F1F;
+  background-color: #1f1f1f;
   color: white;
+}
+
+p {
+  font-size: 1.6rem;
 }
 
 .side-padding {
   padding-left: 5%;
-  padding-right:5%;
+  padding-right: 5%;
 }
 
 /*Nav Bar*/
@@ -52,7 +56,7 @@ nav ul li a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100vh; /* Full-screen height */
+  height: 100vh;
   width: 100%;
 }
 
@@ -64,17 +68,17 @@ nav ul li a {
 }
 
 .hero-content h1 {
-  font-size: 3rem;
+  font-size: 5.4rem;
   margin-bottom: 10px;
 }
 
 .hero-content p {
-  font-size: 1rem;
+  font-size: 1.6rem;
   margin-bottom: 20px;
 }
 
-/*button*/ 
-button {
+/*button*/
+.btn {
   padding: 8px 12px;
   border: 2px solid #db4454;
   border-radius: 10px;
@@ -83,14 +87,15 @@ button {
   background-color: transparent;
   text-align: center;
   font-size: 16px;
-  transition: .3s;
+  transition: 0.3s;
   z-index: 1;
   font-family: inherit;
+  text-decoration: none;
   color: #ffffff;
 }
 
-button::before {
-  content: '';
+.btn::before {
+  content: "";
   width: 0;
   height: 350%;
   position: absolute;
@@ -98,121 +103,192 @@ button::before {
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
   background: #db4454;
-  transition: .5s ease;
+  transition: 0.5s ease;
   display: block;
   z-index: -1;
 }
 
-button:hover::before {
+.btn:hover::before {
   width: 105%;
 }
 
-button:hover {
+.btn:hover {
   color: #111;
 }
 
 /* Carousel Container */
 .carousel {
   display: flex;
-  
   max-width: 600px;
-
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh; /* Adjust height based on your layout */
+  gap: 1em;
 }
 
-/* Columns with duplicated placeholders */
+/* Columns */
 .hero-column {
   flex: 1;
   display: flex;
   flex-direction: column;
-  
   gap: 10px;
-  animation: scrollUp 10s linear infinite;
+  position: relative;
+  overflow: hidden;
 }
 
-.hero-column:nth-child(2) {
-  animation: scrollDown 10s linear infinite;
-}
-
-/* Duplicate placeholders to create seamless scrolling */
-.hero-column .wrapper {
+/* Wrapper (Holds Images and Creates Infinite Scroll) */
+.wrapper {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  animation: scrollUp 24s linear infinite;
 }
 
+/* Reverse Animation for Second Column */
+.scroll-down .wrapper {
+  animation: scrollDown 24s linear infinite;
+}
+
+/* Image Placeholder */
 .image-placeholder {
   width: 100%;
-  height: 440px;
-  background: linear-gradient(45deg, #ff7eb3, #ff758c);
+  height: 400px;
+  background: linear-gradient(45deg, #5f5e5e, #2c2c2c);
   border-radius: 5px;
 }
 
-.hero-column:nth-child(2) .image-placeholder {
-  background: linear-gradient(45deg, #77aaff, #7788ff);
+.scroll-down .image-placeholder {
+  background: linear-gradient(45deg, #5f5e5e, #2c2c2c);
+}
+
+.hero-column img,
+.photo img,
+.services-content img {
+  filter: brightness(80%) grayscale(100%);
+}
+
+/* Carousel Animation */
+@keyframes scrollUp {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes scrollDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
 }
 
 /**********************
 Services
 *************************/
 
-.services, .gallery {
+.services,
+.gallery {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.services h2, .gallery h2 {
+.services {
+  overflow: hidden;
+}
+
+.services h2,
+.gallery h2 {
   font-size: 12.5rem;
   font-weight: 100;
   color: #383838;
 }
 
-.services-content, .gallery-content {
+.services-content,
+.gallery-content {
   display: flex;
   justify-content: space-between;
-  background-color: #ff758c;
+  background-color: #1f1f1f;
   width: 100%;
-  padding-top: 50px;
+  height: 100vh;
   padding-bottom: 50px;
-  margin-top: -85px;
 }
 
 .slide {
-  width: 400px;
-  height: 600px;
+  align-items: center;
 }
 
-/* Scroll Animations (Looping Effect) */
-@keyframes scrollUp {
-  from {
-      transform: translateY(0%);
-  }
-  to {
-      transform: translateY(-100%);
-  }
+.active-img {
+  position: relative;
+  width: 650px;
+  height: auto;
 }
 
-@keyframes scrollDown {
-  from {
-      transform: translateY(-100%);
-  }
-  to {
-      transform: translateY(0%);
-  }
+.inactive {
+  max-width: 300px;
+}
+
+.column2 {
+  display: flex;
+  align-items: center;
+  gap: 8em;
+}
+
+.reveal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5em;
+  margin-bottom: 5em;
+}
+
+.toggle-off {
+  display: none;
+}
+
+.pricing {
+  border-top: 2px solid #db4454;
+  border-left: 2px solid #db4454;
+  border-right: 2px solid #db4454;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+.service-breakdown {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+  border: 2px solid #db4454;
+  padding: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.lg {
+  font-size: 3.8rem;
+  font-weight: 400;
+}
+
+.column2 h2 {
+  font-size: 3.8rem;
+  color: white;
 }
 
 /*********************
 Gallery
 **********************/
 .container {
-  margin-top: -85px;
   max-width: 1224px;
   width: 90%;
-  background-color: #1F1F1F;
+  background-color: #1f1f1f;
 }
 
 .photo-gallery {
@@ -227,11 +303,16 @@ Gallery
   gap: 2em;
 }
 
+.photo {
+  overflow: hidden;
+}
+
 .photo img {
-  max-width: 300px;
+  max-width: 350px;
   height: auto;
   border-radius: 5px;
   object-fit: cover;
+  transition: transform 0.5s ease-in-out;
 }
 
 /* Hover Zoom Effect - Zoom Inside Container */
@@ -249,6 +330,284 @@ Gallery
 
 @media (max-width: 480px) {
   .gallery {
-      grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
+}
+
+/*Components*/
+.pulsing-button {
+  width: 80px;
+  height: 80px;
+  background-color: #db4454;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 0 15px rgba(33, 33, 33, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+
+/*Scroll Bar*/
+body {
+  --sb-track-color: #373737;
+  --sb-thumb-color: #db4454;
+  --sb-size: 9px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 9px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 9px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
+/* ..............................
+my code is below this 
+.............................. */
+
+.description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-content {
+  max-width: 1920px;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  padding: 20px;
+}
+
+.testimonial h2 {
+  padding: 20px;
+  font-size: 30px;
+  line-height: 42px;
+  color: #db4454;
+  font-weight: 600;
+}
+
+.testimonial-card {
+  margin-top: 30px;
+  max-width: 300px;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  background-color: #5f5e5e;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  background-blend-mode: darken;
+  border: solid 1px #db4454;
+}
+
+.social-icon {
+  position: relative;
+  top: -20px;
+  width: 40px;
+  height: 40px;
+}
+
+.testimonial-card p {
+  font-size: 16px;
+  padding: 10px;
+  color: #db4454;
+}
+
+.testimonial-card h5 {
+  font-size: 22px;
+  color: #111;
+}
+
+.rating-container {
+  height: 20px;
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.rating-container img {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.visit-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-height: 600px;
+  height: 100%;
+}
+
+.map-container {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  max-height: 600px;
+  border: #db4454 solid 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.map-container h4 {
+  position: absolute;
+  color: #db4454;
+  z-index: 1;
+  font-size: 58px;
+  font-weight: 300;
+  line-height: 70px;
+  top: -40px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(60%) brightness(100%) contrast(120%);
+}
+
+.map-overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  max-height: 600px;
+  background: rgba(10, 10, 20, 0.3);
+}
+
+.visit-description {
+  width: 50%;
+  height: 100%;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.visit-description h4 {
+  font-size: 58px;
+  font-weight: 600;
+  line-height: 70px;
+  color: #db4454;
+  margin: 20px;
+}
+
+.visit-container a {
+  text-decoration: none;
+  color: #db4454;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+.visit-container a:hover {
+  text-decoration: underline;
+}
+
+.section-border {
+  width: 100%;
+  height: 100%;
+  max-height: 50px;
+  display: flex;
+  flex-direction: row;
+  background-color: #5f5e5e;
+}
+
+.section-1 {
+  background-color: #db4454;
+  width: 70%;
+  height: 100%;
+}
+
+.section-2 {
+  background-color: #5f5e5e;
+  width: 30%;
+  height: 100%;
+}
+
+.footer {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer a {
+  font-size: 20px;
+  color: #5f5e5e;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.scroll-button {
+  margin: 15px;
+  height: 25px;
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.scroll-button p {
+  color: #5f5e5e;
+}
+
+.arrow {
+  height: 20px;
+  width: 20px;
+}
+
+.social-container {
+  margin: 15px;
+  height: 30px;
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.social-container img {
+  width: 25px;
+  height: 25px;
+}
+
+.social-container a:hover {
+  transform: scale(1.3) translateY(-5px);
+  transition: 0.3s ease-in;
+}
+
+.column-1 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
