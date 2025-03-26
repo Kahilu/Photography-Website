@@ -78,7 +78,9 @@ nav ul li a {
 }
 
 /*button*/
-.btn {
+
+button {
+
   padding: 8px 12px;
   border: 2px solid #db4454;
   border-radius: 10px;
@@ -94,7 +96,7 @@ nav ul li a {
   color: #ffffff;
 }
 
-.btn::before {
+button::before {
   content: "";
   width: 0;
   height: 350%;
@@ -198,7 +200,6 @@ Services
   align-items: center;
 }
 
-.services {
   overflow: hidden;
 }
 
@@ -280,6 +281,23 @@ Services
 .column2 h2 {
   font-size: 3.8rem;
   color: white;
+/* Scroll Animations (Looping Effect) */
+@keyframes scrollUp {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes scrollDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
 }
 
 /*********************
@@ -319,6 +337,12 @@ Gallery
 .photo:hover img {
   transform: scale(1.2); /* Zoom in */
   transition: transform 0.5s;
+}
+
+/* my section going down */
+
+.description {
+  text-align: center;
 }
 
 /* Mobile Responsiveness */
