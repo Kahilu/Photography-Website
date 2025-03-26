@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Photography Website</title>
+    <title>Roy Tattoo</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200;400;700&display=swap"
       rel="stylesheet"
@@ -14,109 +14,245 @@
       <nav class="nav-bar">
         <div class="logo">logo</div>
         <ul class="nav-header">
-          <li><a href="">HOME</a></li>
-          <li><a href="">SERVICES</a></li>
-          <li><a href="">GALLERY</a></li>
-          <li><a href="">CONTACT</a></li>
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#services">SERVICES</a></li>
+          <li><a href="#gallery">GALLERY</a></li>
+          <li><a href="#contact">CONTACT</a></li>
         </ul>
         <a href="#">book session</a>
       </nav>
     </header>
-    <section class="hero side-padding">
+    <section class="hero side-padding" id="home">
       <div class="hero-content">
-          <h1>photography website</h1>
-          <p>Welcome to my photography portfolio, where each image tells a unique story. Explore my work and discover the beauty in every moment.</p>
-          <button>BOOK SESSION</button>
+        <h1>Roy Tattoo</h1>
+        <p class="tagline">Tattoo and Piercing Shop</p>
+        <a href="#" class="btn">BOOK SESSION</a>
       </div>
       <div class="carousel">
-        <div class="hero-column">
+        <!-- First Column (Scrolling Up) -->
+        <div class="hero-column scroll-up">
           <div class="wrapper">
-            <div class="image-placeholder"></div>
-            <div class="image-placeholder"></div>
-            <div class="image-placeholder"></div>
-            <div class="image-placeholder"></div>
+            <img class="image-placeholder" src="/images/caro-1.jpg" alt="" />
+            <img class="image-placeholder" src="/images/caro-2.jpg" alt="" />
+            <img class="image-placeholder" src="/images/caro-3.jpg" alt="" />
+            <img class="image-placeholder" src="/images/caro-4.jpg" alt="" />
           </div>
+        </div>
+
+        <!-- Second Column (Scrolling Down) -->
+        <div class="hero-column scroll-down">
           <div class="wrapper">
-            <div class="image-placeholder"></div>
-            <div class="image-placeholder"></div>
-            <div class="image-placeholder"></div>
-            <div class="image-placeholder"></div>
-          </div>
-        </div>
-        <div class="hero-column">
-          <div class="wrapper">
-            <div class="image-placeholder"></div>
-            <div class="image-placeholder"></div>
-            <div class="image-placeholder"></div>
-            <div class="image-placeholder"></div>
-          </div>
-          <div class="wrapper">
-            <div class="image-placeholder"></div>
-            <div class="image-placeholder"></div>
-            <div class="image-placeholder"></div>
-            <div class="image-placeholder"></div>
-          </div>
-        </div>
-    </div>
-  </section>
-    <section class="services">
-      <h2>services</h2>
-      <div class="services-content">
-        <div>
-          <p>coorperate photography</p>
-        </div>
-        <div class="slide">
-          <img src="" alt="Photo of Wedding" />
-          <div>
-            <p>wedding photography</p>
-            <p>let us capture your special day with elegance and style</p>
-          </div>
-        </div>
-        <div>
-          <img src="" alt="Photo of Family">
-          <p>family photography</p>
-          <p>images tell a thousand words, let us journal our stories</p>
-        </div>
-    </div>
-  </section>
-  <section class="gallery">
-    <h2>gallery</h2>
-    <div class="container">
-      <div class="photo-gallery">
-        <div class="column">
-          <div class="photo">
-            <img src="/Photography-Website/images/pic1.jpg" alt="">
-          </div>
-          <div class="photo">
-            <img src="/Photography-Website/images/pic2.jpg" alt="">
-          </div>
-          <div class="photo">
-            <img src="/Photography-Website/images/pic3.jpg" alt="">
-          </div>
-        </div>
-        <div class="column">
-          <div class="photo">
-            <img src="/Photography-Website/images/pic4.jpg" alt="">
-          </div>
-          <div class="photo">
-            <img src="/Photography-Website/images/pic5.jpg" alt="">
-          </div>
-          <div class="photo">
-            <img src="/Photography-Website/images/pic6.jpg" alt="">
-          </div>
-        </div>
-        <div class="column">
-          <div class="photo">
-            <img src="/Photography-Website/images/pic7.jpg" alt="">
-          </div>
-          <div class="photo">
-            <img src="/Photography-Website/images/pic8.jpg" alt="">
-          </div>
-          <div class="photo">
-            <img src="/Photography-Website/images/pic1.jpg" alt="">
+            <img class="image-placeholder" src="/images/caro-a.jpg" alt="" />
+            <img class="image-placeholder" src="/images/caro-b.jpg" alt="" />
+            <img class="image-placeholder" src="/images/caro-c.jpg" alt="" />
+            <img class="image-placeholder" src="/images/caro-d.jpg" alt="" />
           </div>
         </div>
       </div>
+    </section>
+    <section class="services" id="services">
+      <h2>services</h2>
+      <div class="services-content">
+        <div class="inactive">
+          <img src="" alt="Picture of service" />
+          <div>
+            <p>Additional Service</p>
+            <p>tagline for a different service offered by tattoo shop</p>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="reveal-content toggle-off">
+            <button class="pulsing-button">Back</button>
+            <div class="column2">
+              <div>
+                <h2>Tattooing</h2>
+                <img src="/images/service-1.jpg" alt="picture of Tattos" />
+              </div>
+              <div>
+                <div class="pricing">
+                  <p>Starts From</p>
+                  <p class="lg">K200</p>
+                </div>
+                <div class="service-breakdown">
+                  <p>Tattoo Design</p>
+                  <p>Tattoo Covering</p>
+                  <p>Covering Scars</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img
+            class="active-img"
+            src="/images/main-service-1.jpg"
+            alt="Tattoo"
+          />
+          <div>
+            <p>Tattooing</p>
+            <p>capture memories through ink</p>
+          </div>
+        </div>
+        <div class="inactive">
+          <img src="" alt="Photo of Family" />
+          <p>Piercing</p>
+          <p>from ear to nose, belly to tounge, we have got you covered</p>
+        </div>
+      </div>
+    </section>
+    <section class="gallery" id="gallery">
+      <h2>gallery</h2>
+      <div class="container">
+        <div class="photo-gallery">
+          <div class="column">
+            <div class="photo">
+              <img src="images/pic1.png" alt="" />
+            </div>
+            <div class="photo">
+              <img src="images/pic2.jpg" alt="" />
+            </div>
+            <div class="photo">
+              <img src="images/pic3.jpg" alt="" />
+            </div>
+          </div>
+          <div class="column">
+            <div class="photo">
+              <img src="images/pic4.jpg" alt="" />
+            </div>
+            <div class="photo">
+              <img src="images/pic5.jpg" alt="" />
+            </div>
+            <div class="photo">
+              <img src="images/pic6.jpg" alt="" />
+            </div>
+          </div>
+          <div class="column">
+            <div class="photo">
+              <img src="images/pic7.jpg" alt="" />
+            </div>
+            <div class="photo">
+              <img src="images/pic8.jpg" alt="" />
+            </div>
+            <div class="photo">
+              <img src="images/pic9.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="testimonial">
+        <div class="description"><h2>What our clients are saying</h2></div>
+        <div class="testimonial-content">
+          <div class="testimonial-card">
+            <div class="icon-container">
+              <img class="social-icon" src="/images/X-icon.svg" alt="" />
+            </div>
+            <h5>Ronald Weasley</h5>
+            <p>"Hands down the best tatoo artist I've worked with in Lusaka"</p>
+            <div class="rating-container">
+              <img src="/images/rating-star.svg" alt="" />
+              <img src="/images/rating-star.svg" alt="" />
+              <img src="/images/rating-star.svg" alt="" />
+              <img src="/images/rating-star.svg" alt="" />
+              <img src="/images/rating-star.svg" alt="" />
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="icon-container">
+              <img class="social-icon" src="/images/tiktok-icon.svg" alt="" />
+            </div>
+            <h5>Hermione Granger</h5>
+            <p>"Great customer service"</p>
+            <div class="rating-container">
+              <img src="/images/rating-star.svg" alt="" />
+              <img src="/images/rating-star.svg" alt="" />
+              <img src="/images/rating-star.svg" alt="" />
+              <img src="/images/rating-star.svg" alt="" />
+              <img src="/images/rating-star.svg" alt="" />
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="icon-container">
+              <img class="social-icon" src="/images/facebook-icon.svg" alt="" />
+            </div>
+            <h5>Tom Riddle</h5>
+            <p>"Not my first time, not my last"</p>
+            <div class="rating-container">
+              <img src="/images/rating-star.svg" alt="" />
+              <img src="/images/rating-star.svg" alt="" />
+              <img src="/images/rating-star.svg" alt="" />
+              <img src="/images/rating-star.svg" alt="" />
+              <img src="/images/rating-star.svg" alt="" />
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="icon-container">
+              <img
+                class="social-icon"
+                src="/images/instagram-icon.svg"
+                alt=""
+              />
+            </div>
+            <h5>Severus Snape</h5>
+            <p>"Definitely coming back"</p>
+            <div class="rating-container">
+              <img src="/images/rating-star.svg" alt="" />
+              <img src="/images/rating-star.svg" alt="" />
+              <img src="/images/rating-star.svg" alt="" />
+              <img src="/images/rating-star.svg" alt="" />
+              <img src="/images/rating-star.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="visit-container">
+        <div class="map-container">
+          <div class="section-border"></div>
+          <h4>COME LET US LEAVE A MARK</h4>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3845.816246918358!2d28.313135075883633!3d-15.440465885151513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19408d23e7f2b72b%3A0x20217823f091ceaa!2sRoy%20Tattoo%20Lusaka%20Zambia!5e0!3m2!1sen!2szm!4v1742725234336!5m2!1sen!2szm"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <div class="map-overlay"></div>
+        </div>
+        <div class="map-image"></div>
+        <div class="visit-description">
+          <h4>Visit Us</h4>
+          <p>
+            Katapa Street, House No. 47 <br />Libala Stage 1<br />Lusaka, Lusaka
+            10101, ZM
+          </p>
+          <a href="https://maps.app.goo.gl/ZFkg7Ky6rxoBHRrb9">GET DIRECTIONS</a>
+        </div>
+      </div>
+      <div class="section-border">
+        <div class="section-1"></div>
+        <div class="section-2"></div>
+      </div>
+    </section>
+    <section>
+      <div class="footer">
+        <div class="column-1">
+          <div class="scroll-button">
+            <div class="arrow">
+              <img src="/images/Up-arrow.svg" alt="" />
+            </div>
+            <div><p>Scroll Up</p></div>
+          </div>
+          <div class="social-container">
+            <a href=""><img src="/images/facebook-icon.svg" alt="" /></a>
+            <a href=""><img src="/images/instagram-icon.svg" alt="" /></a>
+            <a href=""><img src="/images/X-icon.svg" alt="" /></a>
+            <a href=""><img src="/images/tiktok-icon.svg" alt="" /></a>
+          </div>
+        </div>
+        <div class="column-2"></div>
+        <div class="column-3"></div>
+    
+    
+
     </div>
   </section>
     <section>
@@ -174,5 +310,6 @@
         </div>
       </div>
     </section>
+<script src="script.js"></script>
   </body>
 </html>
